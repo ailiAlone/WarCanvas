@@ -19,7 +19,7 @@ func execute() -> void:
 	super.execute()
 	if status == Status.Failed:
 		return
-	print("执行攻击命令: 单位 %d 攻击网格 %s" % [_attacker, _target_grid])
+	print("执行攻击命令")
 	
 	# 检查攻击者和目标网格是否有效
 	if _attacker == null:
@@ -60,7 +60,11 @@ func perform_attack(attacker: Battalion, target: Unit) -> int:
 	target.info.armySize -= damage
 	
 	print("对单位造成了 %d 点伤害" % [damage])
-	
+	var popup_effect = preload("res://game_core/game_ui/popup_effect/popupeffect.tscn").instantiate()
+	GameState.get_world_node().add_child(popup_effect)
+	# await GameState.get_world_node().get_tree().process_frame
+	popup_effect.show_damage(damage, target.occupy_grid.center_point + Vector3.UP)
+
 	# 检查目标是否被消灭
 	if target.info.armySize <= 0:
 		print("单位被消灭")
@@ -86,8 +90,7 @@ func calculate_damage(attacker: Battalion, target: Unit) -> int:
 	# 最终伤害
 	var final_damage = int(base_damage * random_factor) * attacker.unit.info.armySize
 	
-	# return final_damage
-	return 0
+	return final_damage
 
 # 处理单位被消灭的逻辑
 func handle_unit_defeat(defeated_unit: Unit):
