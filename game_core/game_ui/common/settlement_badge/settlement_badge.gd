@@ -11,7 +11,7 @@ func initialize(settlement: Settlement):
 	_settlement = settlement
 	# settlement对象有一个id属性
 	settlement_badge_ui.set_name_label("定居点" + str(settlement._id))
-
+	_settlement.population_changed.connect(update_badge)
 	update_badge()
 
 func update_badge():

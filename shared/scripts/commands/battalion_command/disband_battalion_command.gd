@@ -44,7 +44,7 @@ func execute() -> void:
 	
 	# 返还兵役人口
 	if _headquarter.population != null:
-		_headquarter.population.add_military_troops(unit_info.armySize)
+		_headquarter.population.add_idle_military(unit_info.armySize)
 	
 	# 返还资源
 	var returned_items = {}

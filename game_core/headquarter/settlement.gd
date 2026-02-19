@@ -39,6 +39,9 @@ func generate_building(building_id: String, grid: Grid,constructer_count: int):
 func get_generate_Battalion_grids() -> Array[Grid]:
 	var neighbor_grids: Array[Grid] = []
 	for building in buildings:
+		# 只统计已经建成的建筑
+		if not building.is_finished:
+			continue
 		var grids = GridUtils.get_grids_by_expansion(building.occupy_grid, 1)
 		for grid in grids:
 			if grid not in neighbor_grids and grid.holding_node3D == null:

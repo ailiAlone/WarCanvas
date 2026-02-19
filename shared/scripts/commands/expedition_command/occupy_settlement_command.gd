@@ -46,12 +46,12 @@ func execute() -> void:
 		command_completed.emit()
 		return
 	
-	# 检查目标定居点是否已经被占领
-	if _target_settlement.governance_statuses["normal"]["active"] == false:
-		print("目标定居点处于特殊状态，无法占领")
-		status = Status.Failed
-		command_completed.emit()
-		return
+	# # 检查目标定居点是否已经被占领
+	# if _target_settlement.governance_statuses["normal"]["active"] == false:
+	# 	print("目标定居点处于特殊状态，无法占领")
+	# 	status = Status.Failed
+	# 	command_completed.emit()
+	# 	return
 	
 	# 调用Expedition的occupy_settlement方法占领定居点
 	_expedition.occupy_settlement(_target_settlement)

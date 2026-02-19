@@ -127,7 +127,13 @@ func reduce_idle_military(amount: int) -> bool:
 	else:
 		print("减少失败,Idle兵役人口不足,需要 %d,但只有 %d" % [amount, _idle_military])
 		return false
-		
+# 外部调用 直接增加
+func add_idle_military(amount: int) -> bool:
+	_idle_military += amount
+	print("成功增加 %d Idle兵役人口,当前闲置兵役人口: %d" % [amount, _idle_military])
+	_headquarter.population_changed.emit()
+	return true
+	
 # 外部调用 直接减少
 func reduce_idle_population(amount: int) -> bool:
 	if _idle_population >= amount:

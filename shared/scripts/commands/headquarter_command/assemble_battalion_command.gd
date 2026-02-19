@@ -72,6 +72,9 @@ func execute() -> void:
 		command_completed.emit()
 		return
 	
+	# 扣除兵役人口
+	_headquarter.population.reduce_idle_military(_unit_info.armySize)
+	
 	print("资源扣除完成，生成单位")
 	_headquarter.generate_battalion(_unit_info,_grid)
 	status = Status.Success

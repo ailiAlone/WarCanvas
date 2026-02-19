@@ -20,7 +20,8 @@ func _ready():
 	var init_data = GameState.get_game_init_data()
 
 	GameState.init_gamestate(self,GameState.WorldMode.RUNNING,init_data["map_path"])
-
+	$Camera3D.reset()
+		
 	# 初始化玩家
 	_initialize_players(init_data["player_configs"])
 	

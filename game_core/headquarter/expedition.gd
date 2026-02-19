@@ -86,14 +86,18 @@ func occupy_settlement(target_settlement: Settlement)->void:
 		var existing_quantity = settlement.inventory.get_item_quantity(item_id) # 新定居点本应该没有任何物资，但是为了形式
 		settlement.inventory.set_item_quantity(item_id, existing_quantity + quantity)
 	
+
 	# 先清理网格引用
 	if unit.occupy_grid != null:
 		unit.occupy_grid.holding_node3D = null
 	
 	# 更新网格的owner_headquarter_id
-	for grid in target_settlement.get_generate_building_grids():
-		grid.owner_headquarter_id = target_settlement._id
-	
+	for grid in target_settlement.get_generate_building_grids() + target_settlement.get_generate_Battalion_grids():
+		grid.set_owner_headquarter_id(_id)
+		
+	GameState.player_id = settlement._id
+	settlement.friend_relations = friend_relations
+
 	#删除旧的headquarter
 	HeadquarterManager.remove_headquarter(target_settlement)
 	

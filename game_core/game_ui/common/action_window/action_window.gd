@@ -10,7 +10,7 @@ class_name ActionWindow
 @onready var clearing_resistance_button: Button = $MarginContainer/VBoxContainer/ClearingResistanceButton
 @onready var restoring_order_button: Button = $MarginContainer/VBoxContainer/RestoringOrderButton
 @onready var generate_camp_button: Button = $MarginContainer/VBoxContainer/GenerateCampButton
-
+@onready var occupy_settlement_button: Button = $MarginContainer/VBoxContainer/OccupySettlementButton
 var _unit:Unit = null
 var player_ui: Node = null  # 引用player_ui节点
 func _ready():
@@ -22,6 +22,7 @@ func _ready():
 	clearing_resistance_button.pressed.connect(_on_clearing_resistance_button_pressed)
 	restoring_order_button.pressed.connect(_on_restoring_order_button_pressed)
 	generate_camp_button.pressed.connect(_on_generate_camp_button_pressed)
+	occupy_settlement_button.pressed.connect(_on_occupy_settlement_button_pressed)
 
 func set_unit(unit:Unit):
 	print("设置单位为: %s" % [unit.info.name])
@@ -52,7 +53,7 @@ func show_expedition_options():
 	disband_button.visible = false
 	occupy_button.visible = false
 	clearing_resistance_button.visible = false
-	restoring_order_button.visible = true
+	restoring_order_button.visible = false
 	generate_camp_button.visible = true
 	reset_size()
 
@@ -219,3 +220,27 @@ func _on_generate_camp_button_pressed():
 			push_error("Unit does not belong to a valid Expedition")
 		
 	hide()
+
+func _on_occupy_settlement_button_pressed():
+	print("占领定居点按钮按下")
+	if _unit != null:
+		var expedition:Expedition = null
+		if _unit.belonging_node is Expedition:
+			expedition = _unit.belonging_node
+		if expedition != null:
+			#获取所处位置的定居点
+			var target_settlement = HeadquarterManager.get_headquarter_by_id(_unit.occupy_grid.owner_headquarter_id)
+			if target_settlement is Settlement:
+				# 占领定居点
+				print("执行占领定居点操作: 远征 %s 占领定居点 %d" % [expedition.unit.name, target_settlement._id])
+				await CommandBus.execute_command(OccupySettlementCommand.new(expedition, target_settlement))
+				HeadquarterManager.remove_headquarter(expedition)
+			else:
+				push_error("当前网格上没有定居点")
+				return
+			await CommandBus.execute_command(OccupySettlementCommand.new(expedition, target_settlement))
+		else:
+			push_error("Unit does not belong to a valid headquarter")
+	_unit = null
+	hide()
+		
