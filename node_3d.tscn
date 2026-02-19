@@ -1,0 +1,185 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqhyb6r86hyqm"]
+
+[sub_resource type="GDScript" id="GDScript_4xowi"]
+script/source = "extends Node3D
+
+@onready var particles:GPUParticles3D = $GPUParticles3D
+
+func _ready() -> void:
+	InputManager.key_s_pressed.connect(test)
+
+# 使用粒子UParticles3D 节点
+func test(pressed:bool) -> void:
+	particles.emitting = true
+
+# 创建粒子系统
+# 本示例演示如何在 Godot 4.x 中创建简单的 GPU 粒子效果 纯代码实现
+func create_particles_with_code(pressed:bool):
+	print(\"========== 创建粒子系统 ==========\")
+	
+	# ========================================
+	# 第一步：创建 GPUParticles3D 节点
+	# ========================================
+	# GPUParticles3D 是基于 GPU 的粒子系统节点
+	# 相比 CPUParticles3D，性能更好，支持更多粒子
+	var particles = GPUParticles3D.new()
+	
+	# ========================================
+	# 第二步：配置粒子系统的基础属性
+	# ========================================
+	
+	# one_shot: 是否单次发射
+	# true = 按下后一次性发射所有粒子，然后停止
+	# false = 持续循环发射
+	particles.one_shot = true
+	
+	# amount: 粒子的总数量
+	# 这里设置 50 个粒子
+	particles.amount = 50
+	
+	# lifetime: 每个粒子的存活时间（秒）
+	# 粒子发射后 2 秒消失
+	particles.lifetime = 2.0
+	
+	# local_coords: 粒子是否使用局部坐标
+	# false = 粒子在世界空间中运动（发射后与粒子系统分离）
+	# true = 粒子跟随粒子系统移动
+	particles.local_coords = false
+	
+	# ========================================
+	# 第三步：创建粒子材质（ProcessMaterial）
+	# ========================================
+	# ProcessMaterial 决定粒子的运动、颜色、大小等行为
+	var mat = ParticleProcessMaterial.new()
+	
+	# ========================================
+	# 第四步：配置粒子的运动参数
+	# ========================================
+	
+	# direction: 粒子的发射方向（3D向量）
+	# Vector3(x, y, z) - 这里 (0, 1, 0) 表示向上发射
+	mat.direction = Vector3(0, 1, 0)
+	
+	# spread: 发射角度扩散范围（度）
+	# 30 表示在向上方向左右各 15 度的锥形范围内随机发射
+	mat.spread = 30.0
+	
+	# initial_velocity_min / initial_velocity_max: 初始速度范围
+	# 粒子会以 0.5 ~ 1.0 之间的随机速度发射
+	mat.initial_velocity_min = 0.5
+	mat.initial_velocity_max = 1.0
+	
+	# scale_min / scale_max: 粒子大小缩放范围
+	# 粒子大小会在 0.5 ~ 1.0 倍之间随机
+	mat.scale_min = 0.5
+	mat.scale_max = 1.0
+	
+	# emission_shape: 发射器的形状
+	# EMISSION_SHAPE_POINT = 从一个点发射（点发射器）
+	# 其他选项：SPHERE（球体）、BOX（立方体）、ELLIPSOID（椭圆体）
+	mat.emission_shape = ParticleProcessMaterial.EMISSION_SHAPE_POINT
+	
+	# gravity: 重力影响
+	# Vector3(0, 0, 0) = 无重力，粒子沿初始方向直线运动
+	# 如果想有重力下落，可以设置为 Vector3(0, -9.8, 0)
+	mat.gravity = Vector3(0, 0, 0)
+	
+	# ========================================
+	# 第五步：创建粒子外观（Draw Pass / 绘制通道）
+	# ========================================
+	# GPUParticles3D 需要指定一个 Mesh 作为粒子的形状
+	# 这里使用 QuadMesh（平面四边形）作为每个粒子的几何形状
+	
+	var quad = QuadMesh.new()
+	
+	# size: QuadMesh 的大小（宽，高）
+	# 0.2 x 0.2 米的正方形
+	quad.size = Vector2(0.2, 0.2)
+	
+	# ========================================
+	# 第六步：创建材质并设置颜色
+	# ========================================
+	# StandardMaterial3D 是标准 3D 材质
+	# 用于控制 Mesh 的外观（颜色、光照、透明度等）
+	var quad_material = StandardMaterial3D.new()
+	
+	# albedo_color: 材质的基础颜色
+	# Color(r, g, b, a) - RGBA 格式，值范围 0~1
+	# Color(0, 1, 0, 1) = 不透明的绿色
+	quad_material.albedo_color = Color(0, 1, 0, 1)  # 绿色
+	
+	# 将材质应用到 QuadMesh
+	quad.material = quad_material
+	
+	# ========================================
+	# 第七步：组装粒子系统
+	# ========================================
+	
+	# process_material: 设置粒子的运动和行为材质
+	particles.process_material = mat
+	
+	# draw_pass_1: 设置粒子使用的 Mesh
+	# draw_pass_1 对应第一个绘制通道
+	particles.draw_pass_1 = quad
+	
+	# position: 设置粒子系统在 3D 空间中的位置
+	# Vector3(x, y, z) - 这里在原点上方 1 米处
+	particles.position = Vector3(0, 1, 0)
+	
+	# ========================================
+	# 第八步：添加到场景并发射
+	# ========================================
+	
+	# 将粒子节点添加为当前节点的子节点
+	add_child(particles)
+	
+	print(\"发射粒子\")
+	
+	# emitting: 开始发射粒子
+	# 设置为 true 后，粒子系统开始工作
+	particles.emitting = true
+	
+	# ========================================
+	# 第九步：等待后清理
+	# ========================================
+	
+	# await + Timer: 等待 3 秒
+	# 这段代码会暂停执行，直到计时器结束
+	await get_tree().create_timer(3.0).timeout
+	
+	# queue_free(): 延迟销毁节点
+	# 等待粒子生命周期结束后，安全地移除粒子节点
+	particles.queue_free()
+"
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a202f"]
+emission_shape = 3
+emission_box_extents = Vector3(2, 0, 2)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 38.0
+linear_accel_max = 38.0
+scale_min = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a202f"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_a202f"]
+material = SubResource("StandardMaterial3D_a202f")
+size = Vector3(0.43, 1.835, 0.315)
+
+[node name="Node3D" type="Node3D"]
+script = SubResource("GDScript_4xowi")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.421687, 1.86515)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 50
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_a202f")
+draw_pass_1 = SubResource("PrismMesh_a202f")

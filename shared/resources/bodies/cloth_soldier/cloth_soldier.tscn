@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://0ns5saxdfq20"]
+
+[ext_resource type="PackedScene" uid="uid://h1fvfjebv6mq" path="res://shared/resources/bodies/cloth_soldier/cloth_soldier.fbx" id="1_7uhoa"]
+
+[node name="cloth_soldier" instance=ExtResource("1_7uhoa")]

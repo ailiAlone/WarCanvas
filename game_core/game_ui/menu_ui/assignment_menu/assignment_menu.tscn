@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://8iqylir1rra6"]
+
+[ext_resource type="Script" uid="uid://dkt2s2h7y3s5f" path="res://game_core/game_ui/menu_ui/assignment_menu/assignment_menu.gd" id="1_bv0gq"]
+
+[node name="AssignmentMenu" type="VBoxContainer"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 64.0
+grow_vertical = 2
+script = ExtResource("1_bv0gq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "生产调配"
+
+[node name="ItemsContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3

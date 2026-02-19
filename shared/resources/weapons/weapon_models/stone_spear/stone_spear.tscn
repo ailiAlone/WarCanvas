@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyayocyjxg3jw"]
+
+[ext_resource type="PackedScene" uid="uid://b2orlt7cnk3nh" path="res://shared/resources/weapons/weapon_models/stone_spear/stone_spear.fbx" id="1_0sw6y"]
+
+[node name="stone_spear" instance=ExtResource("1_0sw6y")]
+
+[node name="stone_spear" parent="." index="0"]
+transform = Transform3D(1.8, 0, 0, 0, 1.74515, 0.440975, 0, -0.440975, 1.74515, 0, -0.226071, -0.794123)

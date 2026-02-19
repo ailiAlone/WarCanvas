@@ -1,0 +1,114 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh4ju171cplat"]
+
+[ext_resource type="Script" uid="uid://3ynu3syly0c8" path="res://game_core/game_ui/menu_ui/building_menu/building_menu.gd" id="1_8uyj6"]
+
+[node name="BuildingMenu" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -768.0
+offset_bottom = -339.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8uyj6")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+text = "建筑菜单"
+horizontal_alignment = 1
+
+[node name="PopulationBuildings" type="GridContainer" parent="."]
+layout_mode = 2
+
+[node name="PopulationTitle" type="Label" parent="PopulationBuildings"]
+layout_mode = 2
+text = "人口建筑"
+
+[node name="ResourceBuildings" type="GridContainer" parent="."]
+layout_mode = 2
+
+[node name="ResourceTitle" type="Label" parent="ResourceBuildings"]
+layout_mode = 2
+text = "生产建筑"
+
+[node name="ProcessorBuildings" type="GridContainer" parent="."]
+layout_mode = 2
+
+[node name="ProcessorTitle" type="Label" parent="ProcessorBuildings"]
+layout_mode = 2
+text = "加工建筑"
+
+[node name="EconomicBuildings" type="GridContainer" parent="."]
+layout_mode = 2
+
+[node name="EconomicTitle" type="Label" parent="EconomicBuildings"]
+layout_mode = 2
+text = "经济建筑"
+
+[node name="CoreBuildings" type="GridContainer" parent="."]
+layout_mode = 2
+
+[node name="CoreTitle" type="Label" parent="CoreBuildings"]
+layout_mode = 2
+text = "核心建筑"
+
+[node name="AdvancedBuildings" type="GridContainer" parent="."]
+layout_mode = 2
+
+[node name="AdvancedTitle" type="Label" parent="AdvancedBuildings"]
+layout_mode = 2
+text = "高级建筑"
+
+[node name="MilitaryBuildings" type="GridContainer" parent="."]
+layout_mode = 2
+
+[node name="MilitaryTitle" type="Label" parent="MilitaryBuildings"]
+layout_mode = 2
+text = "军事建筑"
+
+[node name="DefenseBuildings" type="GridContainer" parent="."]
+layout_mode = 2
+
+[node name="DefenseTitle" type="Label" parent="DefenseBuildings"]
+layout_mode = 2
+text = "防御建筑"
+
+[node name="BuildConfig" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="title" type="Label" parent="BuildConfig"]
+layout_mode = 2
+text = "建造人数"
+
+[node name="HSlider" type="HSlider" parent="BuildConfig"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+rounded = true
+
+[node name="SpinBox" type="SpinBox" parent="BuildConfig"]
+layout_mode = 2
+rounded = true
+
+[node name="Label" type="Label" parent="BuildConfig"]
+layout_mode = 2
+text = "建造人数上限：0"
+
+[node name="Build" type="Button" parent="."]
+layout_mode = 2
+text = "建造
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "库存资源："
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "该建筑所需的资源："

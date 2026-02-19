@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://0khy1rk7xvqk"]
+
+[ext_resource type="PackedScene" uid="uid://b1r5kcftpv56f" path="res://shared/resources/weapons/weapon_models/cross_bow/cross_bow.fbx" id="1_6d7ml"]
+
+[node name="cross_bow" instance=ExtResource("1_6d7ml")]
+
+[node name="Crossbow" parent="." index="0"]
+transform = Transform3D(-4.37114e-06, -1.19209e-05, 100, 23.7499, -97.1388, -1.05417e-05, 97.1388, 23.7499, 7.07728e-06, 0, -0.271155, 0.0858211)

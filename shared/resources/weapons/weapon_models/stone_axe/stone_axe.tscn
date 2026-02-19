@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbp8umve8ump6"]
+
+[ext_resource type="PackedScene" uid="uid://3d0vw6rwr8a0" path="res://shared/resources/weapons/weapon_models/stone_axe/stone_axe.fbx" id="1_ivp1t"]
+
+[node name="stone_axe" instance=ExtResource("1_ivp1t")]
+
+[node name="Hatchet" parent="." index="0"]
+transform = Transform3D(1.91069e-13, -4.37114e-06, -100, -100, -4.37114e-06, 0, -4.37114e-06, 100, -4.37114e-06, 0, 0, 0.18725)

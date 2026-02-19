@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpgydm2ci6twu"]
+
+[ext_resource type="Script" uid="uid://b015c5osdtqag" path="res://game_core/game_ui/menu_ui/assignment_menu/assignment_item/assignment_item.gd" id="1_budxw"]
+
+[node name="AssignmentItem" type="HBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.5
+offset_top = -68.0
+offset_right = 114.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_budxw")
+
+[node name="ProductInfo" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MainProductionLabel" type="Label" parent="ProductInfo"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Name"
+
+[node name="ProductTextureRect" type="TextureRect" parent="ProductInfo"]
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 5
+
+[node name="InventoryLabel" type="Label" parent="ProductInfo"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+text = "库存:
+100"
+
+[node name="ArrangeContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.18
+
+[node name="ProductionCap" type="HBoxContainer" parent="ArrangeContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ArrangeContainer/ProductionCap"]
+layout_mode = 2
+text = "停止于"
+
+[node name="HSlider" type="HSlider" parent="ArrangeContainer/ProductionCap"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1000.0
+rounded = true
+
+[node name="SpinBox" type="SpinBox" parent="ArrangeContainer/ProductionCap"]
+layout_mode = 2
+max_value = 1000.0
+rounded = true
+
+[node name="Capacity" type="HBoxContainer" parent="ArrangeContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ArrangeContainer/Capacity"]
+layout_mode = 2
+text = "生产力"
+
+[node name="HSlider" type="HSlider" parent="ArrangeContainer/Capacity"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1000.0
+rounded = true
+
+[node name="SpinBox" type="SpinBox" parent="ArrangeContainer/Capacity"]
+layout_mode = 2
+max_value = 1000.0
+rounded = true
+
+[node name="RecipeLabel" type="Label" parent="ArrangeContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "xxx worker ： 
+a metarial -> c producte"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ConfirmButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "确定"
+
+[node name="ExplanationLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "说明"

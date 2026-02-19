@@ -1,0 +1,128 @@
+attention,,
+DO NOT open this film with,"WPS Office , Microsoft Excel","might ""intelligently"" convert encoding"
+recommended to open this file with,"VS Code, Notepad++, Sublime Text","standardly displays the current file encoding.
+
+"
+make sure this file's encoding is,utf-8 without BOM,
+,,
+,,
+,,
+key,en,zh
+LANGUAGE,Language,语言
+TENT,Tent,帐篷
+CAMP_TENT,Camp tent,营帐
+SMALL_HOUSE,Small house,小型房屋
+MEDIUM_HOUSE,Medium house,中型房屋
+LARGE_HOUSE,Large house,大型房屋
+FISHER_HUT,Fisher hut,渔夫小屋
+LUMBER_CAMP,Lumber camp,伐木场
+MINE,Mine,采矿场
+FARM,Farm,农场
+PASTURE,Pasture,牧场
+WOOD_WORKSHOP,Wood workshop,木工厂
+STONE_WORKSHOP,Stone workshop,石工厂
+SMELTERY,Smeltery,冶炼厂
+WIND_MILL,Windmill,风力磨坊
+WATER_MILL,Watermill,水力磨坊
+ANIMAL_MILL,Animal mill,动物磨坊
+SLAUGHTERHOUSE,Slaughterhouse,屠宰场
+REFINERY,Refinery,精加工坊
+TAVERN,Tavern,酒馆
+MERCENARY_GUILD,Mercenary guild,雇佣兵行会
+MARKETPLACE,Marketplace,集市
+MARKET,Market,市场
+MERCHANTS_GUILD,Merchants guild,商行
+TRADE_LEAGUE,Trade league,商盟
+SMALL_WAREHOUSE,Small warehouse,仓库（小）
+LARGE_WAREHOUSE,Large warehouse,仓库（大）
+DOCK,Dock,码头
+HARBOR,Harbor,港口
+WORKERS_GUILD,Workers guild,工人行会
+FARMERS_GUILD,Farmers guild,农牧行会
+THIEVES_GUILD,Thieves guild,盗贼行会
+TOWN_HALL,Town hall,市政厅
+PALACE,Palace,宫殿
+HOSPITAL,Hospital,医院
+COURTHOUSE,Courthouse,法院
+BASIC_COLLEGE,Basic college,基础学院
+COMMERCE_COLLEGE,Commerce college,商业学院
+MILITARY_ACADEMY,Military academy,军事学院
+BARRACKS,Barracks,兵营
+FORTRESS,Fortress,要塞
+CASTLE,Castle,城堡
+TRAINING_GROUND,Training ground,训练场
+MILITARY_FACTORY,Military factory,军工场
+STABLE,Stable,马厩
+SIEGE_WORKSHOP,Siege workshop,攻城器械厂
+WOODEN_WALL,Wooden wall,木墙
+STONE_WALL,Stone wall,石墙
+WOODEN_GATE,Wooden gate,木门
+CITY_GATE,City gate,城门
+WOODEN_TOWER,Wooden tower,木塔
+STONE_TOWER,Stone tower,石塔
+# 物品翻译
+WHEAT,Wheat,小麦
+WOOD,Wood,木材
+STONE_ORE,Stone ore,石矿
+IRON_ORE,Iron ore,铁矿
+GOLD_ORE,Gold ore,金矿
+SHEEP,Sheep,羊
+COW,Cow,牛
+HORSE,Horse,马
+FISH,Fish,鱼
+FLOUR,Flour,面粉
+MEAT,Meat,肉
+LEATHER,Leather,皮革
+PLANK,Plank,木板
+STONE_BRICK,Stone brick,石砖
+IRON_INGOT,Iron ingot,铁锭
+GOLD_INGOT,Gold ingot,金锭
+LUXURY,Luxury,奢侈品
+SPEAR,Spear,石矛
+BOW,Bow,弓
+WOOD_SHIELD,Wood shield,木盾
+LIGHT_ARMOR,Light armor,轻甲
+STONE_AXE,Stone axe,石斧
+SWORD,Sword,剑
+PIKE,Pike,长枪
+IRON_AXE,Iron axe,铁斧
+LONGBOW,Longbow,长弓
+IRON_SHIELD,Iron shield,铁盾
+HEAVY_ARMOR,Heavy armor,重甲
+CROSSBOW,Crossbow,弩
+WAR_HORSE,War horse,战马
+GOLDEN_COIN,golden coin,金币
+# 分类翻译
+CROPS,Crops,农作物
+WOOD,Wood,木材
+MINERALS,Minerals,矿物
+LIVESTOCK,Livestock,牲畜
+AQUATIC_PRODUCTS,Aquatic products,水产品
+FOOD,Food,食物
+MATERIALS,Materials,材料
+GOODS,Goods,商品
+WEAPON,Weapon,武器
+SHIELD,Shield,盾牌
+ARMOR,Armor,护甲
+MOUNT,Mount,坐骑
+# 单位相关翻译
+UNIT,Unit,单位
+SOLDIER,Soldier,士兵
+CAVALRY,Cavalry,骑兵
+ARMOR_TYPE,Armor type,护甲类型
+NONE,None,无
+LIGHT,Light,轻
+HEAVY,Heavy,重
+SHIELD_TYPE,Shield type,盾牌类型
+WOOD_SHIELD_TYPE,Wood shield,木盾
+IRON_SHIELD_TYPE,Iron shield,铁盾
+# 游戏界面相关
+NEW_UNIT,New unit,新部队
+WORKER,Worker,工人
+,,
+,,
+,,
+,,
+,,
+,,
+,,

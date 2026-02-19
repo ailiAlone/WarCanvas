@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgwvgdchcgp8s"]
+
+[ext_resource type="PackedScene" uid="uid://ckv8oesdo4dt8" path="res://shared/resources/shield_models/iron_shield/Shield_Heater.fbx" id="1_82rvb"]
+
+[node name="Shield_Heater" instance=ExtResource("1_82rvb")]
+
+[node name="Shield_Heater" parent="." index="0"]
+transform = Transform3D(35, 0, 0, 0, -1.5299e-06, 35, 0, -35, -1.5299e-06, 0, 0, 0)

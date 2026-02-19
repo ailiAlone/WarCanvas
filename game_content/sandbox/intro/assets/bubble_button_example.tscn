@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3oa4rw571pot"]
+
+[ext_resource type="Shader" uid="uid://fwv0ye52v4" path="res://game_content/sandbox/intro/assets/bubble_button.gdshader" id="1_xcw2p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kd5c1"]
+shader = ExtResource("1_xcw2p")
+shader_parameter/bubble_radius = 0.42
+shader_parameter/bubble_color = Color(0.4, 0.7, 1, 0.188)
+shader_parameter/time_speed = 2.097
+shader_parameter/intensity = 3.0
+
+[node name="BubbleButtonExample" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+material = SubResource("ShaderMaterial_kd5c1")
+layout_mode = 2
+text = " 按钮示例"

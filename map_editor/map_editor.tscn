@@ -1,0 +1,339 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmpfts1f68o5k"]
+
+[ext_resource type="Script" uid="uid://csgvhgk6ytc1q" path="res://map_editor/map_editor.gd" id="1_map_editor"]
+[ext_resource type="Script" uid="uid://bvv1wmb45y4r2" path="res://map_editor/editor_ui/editor_ui.gd" id="2_r2ooj"]
+[ext_resource type="Script" uid="uid://50n5m6x72a8h" path="res://map_editor/editor_ui/main_menu_ui.gd" id="2_ui"]
+[ext_resource type="Script" uid="uid://b4e0rr6m8538j" path="res://shared/scripts/cameracontroller.gd" id="4_xsg28"]
+[ext_resource type="Script" uid="uid://dplmxb53skwhh" path="res://map_editor/editor_ui/terrain_sub_ui.gd" id="5_0oln8"]
+[ext_resource type="Script" uid="uid://c2o5uxrp6osvd" path="res://map_editor/editor_ui/performance_load_ui.gd" id="5_resource_load_ui"]
+[ext_resource type="Script" uid="uid://b8ykjouwjshaj" path="res://map_editor/editor_ui/geology_sub_ui.gd" id="6_rlpmc"]
+[ext_resource type="Script" uid="uid://cbg1uetattlev" path="res://map_editor/editor_ui/grid_sub_ui.gd" id="7_gxr6b"]
+[ext_resource type="Script" uid="uid://ceu5mkdkcn56v" path="res://map_editor/editor_ui/reset_options_popup.gd" id="7_u4ibt"]
+[ext_resource type="Script" uid="uid://dybka14fg2vx2" path="res://map_editor/editor_ui/file_dialog.gd" id="8_1oy68"]
+[ext_resource type="PackedScene" uid="uid://ctbgw6xmegmpi" path="res://shared/scripts/gpu_terrain/gpu_terrain.tscn" id="14_8ke5g"]
+
+[node name="MapEditor" type="Node3D"]
+script = ExtResource("1_map_editor")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_r2ooj")
+
+[node name="FileDialog" type="FileDialog" parent="UI"]
+dialog_hide_on_ok = true
+access = 2
+show_hidden_files = true
+use_native_dialog = true
+script = ExtResource("8_1oy68")
+
+[node name="Main_Menu" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = -416.0
+script = ExtResource("2_ui")
+
+[node name="TerrainButton" type="Button" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "地形编辑"
+
+[node name="GeologyButton" type="Button" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "地质编辑"
+
+[node name="GridButton" type="Button" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "网格编辑
+"
+
+[node name="SaveButton" type="Button" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "保存地图"
+
+[node name="LoadButton" type="Button" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "加载地图"
+
+[node name="BrushSizeLabel" type="Label" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "画笔大小: 5"
+
+[node name="BrushSizeSlider" type="HSlider" parent="UI/Main_Menu"]
+layout_mode = 2
+min_value = 1.0
+max_value = 20.0
+step = 0.5
+value = 5.0
+
+[node name="BrushStrengthLabel" type="Label" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "画笔强度: 1.0"
+
+[node name="BrushStrengthSlider" type="HSlider" parent="UI/Main_Menu"]
+layout_mode = 2
+max_value = 10.0
+step = 0.1
+value = 1.0
+
+[node name="WidthSpinBox" type="SpinBox" parent="UI/Main_Menu"]
+layout_mode = 2
+min_value = 10.0
+max_value = 1000.0
+step = 10.0
+value = 100.0
+
+[node name="HeightSpinBox" type="SpinBox" parent="UI/Main_Menu"]
+layout_mode = 2
+min_value = 10.0
+max_value = 1000.0
+step = 10.0
+value = 100.0
+
+[node name="ApplySizeButton" type="Button" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "应用地图尺寸"
+
+[node name="ShowGridLines" type="CheckButton" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "显示基本网格"
+
+[node name="ShowChunkBoundaries" type="CheckButton" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "显示单元网格"
+
+[node name="ShowHighlightLine" type="CheckButton" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "显示高亮网格
+"
+
+[node name="ResetButton" type="Button" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "重置编辑"
+
+[node name="TestButton" type="Button" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "生成测试（500*500）
+"
+
+[node name="BackToMenuButton" type="Button" parent="UI/Main_Menu"]
+layout_mode = 2
+text = "返回主菜单"
+
+[node name="TerrainSubMenu" type="VBoxContainer" parent="UI"]
+visible = false
+layout_mode = 2
+offset_left = 160.0
+offset_right = 316.0
+offset_bottom = 66.0
+script = ExtResource("5_0oln8")
+
+[node name="ProtrusionButton" type="Button" parent="UI/TerrainSubMenu"]
+layout_mode = 2
+text = "凸起工具
+"
+
+[node name="DepressionButton" type="Button" parent="UI/TerrainSubMenu"]
+layout_mode = 2
+text = "凹陷工具
+"
+
+[node name="FlattenButton" type="Button" parent="UI/TerrainSubMenu"]
+layout_mode = 2
+text = "平缓工具
+"
+
+[node name="GeologySubMenu" type="VBoxContainer" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 160.0
+offset_top = 32.0
+offset_right = 200.0
+offset_bottom = 72.0
+script = ExtResource("6_rlpmc")
+
+[node name="GridSubMenu" type="VBoxContainer" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 160.0
+offset_top = 72.0
+offset_right = 200.0
+offset_bottom = 112.0
+script = ExtResource("7_gxr6b")
+
+[node name="SettingForrest" type="Button" parent="UI/GridSubMenu"]
+layout_mode = 2
+text = "树木密度
+"
+
+[node name="SettingGeology" type="Button" parent="UI/GridSubMenu"]
+layout_mode = 2
+text = "设置网格地质
+"
+
+[node name="Performance_List" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 168.0
+script = ExtResource("5_resource_load_ui")
+
+[node name="CurrentDeviceLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "当前设备: Unknown"
+horizontal_alignment = 2
+
+[node name="FPSLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "帧率: 0 FPS"
+horizontal_alignment = 2
+
+[node name="StaticMemoryLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "静态内存: 0 B"
+horizontal_alignment = 2
+
+[node name="DynamicMemoryLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "动态内存: 0 B"
+horizontal_alignment = 2
+
+[node name="TotalMemoryLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "总内存: 0 B"
+horizontal_alignment = 2
+
+[node name="ObjectCountLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "对象数: 0"
+horizontal_alignment = 2
+
+[node name="NodeCountLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "节点数: 0"
+horizontal_alignment = 2
+
+[node name="OrphanNodeCountLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "孤立节点数: 0"
+horizontal_alignment = 2
+
+[node name="DrawCallsLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "渲染调用: 0"
+horizontal_alignment = 2
+
+[node name="VideoMemoryLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "视频内存: 0 B"
+horizontal_alignment = 2
+
+[node name="TotalPrimitivesLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "绘制图元总数: 0"
+horizontal_alignment = 2
+
+[node name="TotalObjectsLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "绘制对象总数: 0"
+horizontal_alignment = 2
+
+[node name="TotalDrawCallsLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+text = "绘制调用总数: 0"
+horizontal_alignment = 2
+
+[node name="LOD0CountLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "LOD0级地块数：未统计"
+
+[node name="LOD1CountLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "LOD1级地块数：未统计"
+
+[node name="LOD2CountLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "LOD2级地块数：未统计"
+
+[node name="LOD3CountLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "LOD3级地块数：未统计"
+
+[node name="LOD4CountLabel" type="Label" parent="UI/Performance_List"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "LOD4级地块数：未统计"
+
+[node name="ResetOptionsPopup" type="VSplitContainer" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -33.0
+offset_right = 168.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_u4ibt")
+
+[node name="Label" type="Label" parent="UI/ResetOptionsPopup"]
+layout_mode = 2
+text = "重置编辑会导致编辑内容丢失，建议先进行保存"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ResetOptionsPopup"]
+layout_mode = 2
+alignment = 1
+
+[node name="ResetAll" type="Button" parent="UI/ResetOptionsPopup/HBoxContainer"]
+layout_mode = 2
+text = "全部重置
+"
+
+[node name="ResetTerrain" type="Button" parent="UI/ResetOptionsPopup/HBoxContainer"]
+layout_mode = 2
+text = "重置地形"
+
+[node name="ResetGeology" type="Button" parent="UI/ResetOptionsPopup/HBoxContainer"]
+layout_mode = 2
+text = "重置地质
+"
+
+[node name="Cancel" type="Button" parent="UI/ResetOptionsPopup/HBoxContainer"]
+layout_mode = 2
+text = "取消"
+
+[node name="CurrentEditState" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 40.0
+offset_right = 48.0
+offset_bottom = 89.0
+grow_horizontal = 2
+text = "当前编辑状态："
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("4_xsg28")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.79653, 0.604599, 0, -0.604599, 0.79653, 0, 0, 0)
+sky_mode = 1
+
+[node name="GPU_Terrain" parent="." instance=ExtResource("14_8ke5g")]

@@ -1,0 +1,9 @@
+ID,ModelPath,Attack_Distance,DualHolding,ArmorPiercing,ShieldBreaking
+SPEAR,res://shared/resources/weapons/weapon_models/stone_spear/stone_spear.fbx,1,FALSE,LIGHT,-
+BOW,res://shared/resources/weapons/weapon_models/short_bow/short_bow.fbx,2,TRUE,-,-
+STONE_AXE,res://shared/resources/weapons/weapon_models/stone_axe/stone_axe.fbx,1,TRUE,LIGHT,WOOD_SHIELD
+SWORD,res://shared/resources/weapons/weapon_models/sword/sword.fbx,1,FALSE,-,WOOD_SHIELD
+PIKE,res://shared/resources/weapons/weapon_models/spear/spear.fbx,1,FALSE,HEAVY,WOOD_SHIELD
+IRON_AXE,res://shared/resources/weapons/weapon_models/iron_axe/iron_axe.fbx,1,TRUE,HEAVY,WOOD_SHIELD
+LONGBOW,res://shared/resources/weapons/weapon_models/long_bow/long_bow.fbx,3,TRUE,-,-
+CROSSBOW,res://shared/resources/weapons/weapon_models/cross_bow/cross_bow.fbx,2,TRUE,HEAVY,-

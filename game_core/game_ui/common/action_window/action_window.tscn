@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://8kxc318ai2on"]
+
+[ext_resource type="StyleBox" uid="uid://bbv0jy4hphxo8" path="res://game_core/game_ui/style/simple_black.stylebox" id="1_500y1"]
+[ext_resource type="Script" uid="uid://c3newsk0xry4k" path="res://game_core/game_ui/common/action_window/action_window.gd" id="1_xnewr"]
+
+[node name="ActionWindow" type="PanelContainer"]
+offset_right = 84.0
+offset_bottom = 43.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("1_500y1")
+script = ExtResource("1_xnewr")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "操作选项"
+horizontal_alignment = 1
+
+[node name="MoveButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "移动"
+
+[node name="AttackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "攻击"
+
+[node name="DisbandButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "解散"
+
+[node name="OccupyButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "占领"
+
+[node name="ClearingResistanceButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "肃清"
+
+[node name="GenerateCampButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "生成营地"
+
+[node name="RestoringOrderButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "建立秩序"
+
+[node name="OccupySettlementButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "占领定居点"

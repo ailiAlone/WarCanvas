@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=3 uid="uid://bksnp1tne2dy6"]
+
+[ext_resource type="Script" uid="uid://ci5ttv3bvhha7" path="res://game_core/game_ui/menu_ui/trading_menu/trading_item/trading_item.gd" id="1_ssn4n"]
+
+[node name="TradingItem" type="VBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -74.0
+offset_right = 63.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ssn4n")
+
+[node name="InfoContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="IconTextureRect" type="TextureRect" parent="InfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 2
+
+[node name="Info" type="VBoxContainer" parent="InfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Inventory" type="HBoxContainer" parent="InfoContainer/Info"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoContainer/Info/Inventory"]
+layout_mode = 2
+text = "库存"
+
+[node name="Value" type="Label" parent="InfoContainer/Info/Inventory"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0"
+
+[node name="Demand" type="HBoxContainer" parent="InfoContainer/Info"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoContainer/Info/Demand"]
+layout_mode = 2
+text = "需求"
+
+[node name="value" type="Label" parent="InfoContainer/Info/Demand"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0"
+
+[node name="Supply" type="HBoxContainer" parent="InfoContainer/Info"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="InfoContainer/Info/Supply"]
+layout_mode = 2
+text = "供应"
+
+[node name="value" type="Label" parent="InfoContainer/Info/Supply"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="TradingContainer" type="GridContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 3
+
+[node name="BuyPriceLabel" type="Label" parent="TradingContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "价格"
+
+[node name="ItemNameLabel" type="Label" parent="TradingContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "商品名称"
+
+[node name="SellPriceLabel" type="Label" parent="TradingContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "价格"
+
+[node name="BuyButton" type="Button" parent="TradingContainer"]
+layout_mode = 2
+text = "购入
+"
+
+[node name="NumberSpinBox" type="SpinBox" parent="TradingContainer"]
+layout_mode = 2
+
+[node name="SellButton" type="Button" parent="TradingContainer"]
+layout_mode = 2
+text = "出售"

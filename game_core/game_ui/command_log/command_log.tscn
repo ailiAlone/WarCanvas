@@ -1,0 +1,116 @@
+[gd_scene load_steps=3 format=3 uid="uid://brkwaaxhoeqgb"]
+
+[ext_resource type="Script" uid="uid://cvfttcc2llts1" path="res://game_core/game_ui/command_log/command_log.gd" id="1_4o0jd"]
+[ext_resource type="StyleBox" uid="uid://bbv0jy4hphxo8" path="res://game_core/game_ui/style/simple_black.stylebox" id="1_dyg3l"]
+
+[node name="CommandLog" type="PanelContainer"]
+offset_right = 152.0
+offset_bottom = 51.0
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("1_dyg3l")
+script = ExtResource("1_4o0jd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 20.0
+text = "命令总线列表"
+
+[node name="ToggleButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "展开"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="LastButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Last
+"
+
+[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Next
+"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="headquarter_id" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "headquarter_id"
+
+[node name="time" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "时间"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+
+[node name="type" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "类型"
+
+[node name="name" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "名称"
+
+[node name="status" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "状态"
+
+[node name="DeatailInfoRichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "详情描述
+"
+fit_content = true
+scroll_following = true

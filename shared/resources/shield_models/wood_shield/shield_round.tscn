@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtl7va8ixpsiy"]
+
+[ext_resource type="PackedScene" uid="uid://caifgrynyejwq" path="res://shared/resources/shield_models/wood_shield/Shield_Round.fbx" id="1_gf2xq"]
+
+[node name="Shield_Round" instance=ExtResource("1_gf2xq")]
+
+[node name="Shield_Round" parent="." index="0"]
+transform = Transform3D(35, 0, 0, 0, -1.5299e-06, 35, 0, -35, -1.5299e-06, 0, 0, 0)

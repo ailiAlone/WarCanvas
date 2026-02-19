@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqjsrb072gkd7"]
+
+[ext_resource type="Texture2D" uid="uid://bll5itrvj63c7" path="res://game_core/game_ui/help_page/mouse_scroll_vertical.png" id="1_atet4"]
+[ext_resource type="Texture2D" uid="uid://bxpfs1xcr2il6" path="res://game_core/game_ui/help_page/mouse_move.png" id="2_3n3vp"]
+[ext_resource type="Texture2D" uid="uid://uueavwfurc7b" path="res://game_core/game_ui/help_page/mouse_right.png" id="2_vhesr"]
+
+[node name="HelpMenu" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.5
+offset_top = -134.0
+offset_right = 212.5
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_atet4")
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "上下滚动滑轮
+可以调节镜头 距离"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("2_vhesr")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("2_3n3vp")
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "按住右键 并 移动鼠标
+可以调节镜头角度"

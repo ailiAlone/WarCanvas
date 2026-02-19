@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2wxnb83ueyia"]
+
+[ext_resource type="StyleBox" uid="uid://bbv0jy4hphxo8" path="res://game_core/game_ui/style/simple_black.stylebox" id="1_s78tu"]
+[ext_resource type="Script" uid="uid://yty3ltcxxmja" path="res://game_core/game_ui/option_bar/option_bar.gd" id="2_i1hhk"]
+
+[node name="OptionBar" type="PanelContainer"]
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_styles/panel = ExtResource("1_s78tu")
+script = ExtResource("2_i1hhk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="SystemMenuButton" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "系统菜单"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="BackgroundOperationButton" type="Button" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "后台操作 （尚未完成）"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HelpMenuButton" type="Button" parent="MarginContainer/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "帮助"

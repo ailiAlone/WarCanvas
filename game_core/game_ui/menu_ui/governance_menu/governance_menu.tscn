@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://k1ftjim0vv4b"]
+
+[ext_resource type="Script" uid="uid://bg8edtsbgc2sf" path="res://game_core/game_ui/menu_ui/governance_menu/governance_menu.gd" id="1_lhnlq"]
+
+[node name="GovernanceMenu" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -874.0
+offset_bottom = -563.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lhnlq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "军政"
+
+[node name="MilitaryServicePopulation" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MilitaryServicePopulation"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MilitaryServicePopulation/HBoxContainer2"]
+layout_mode = 2
+text = "当前兵力"
+
+[node name="Value" type="Label" parent="MilitaryServicePopulation/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0"
+
+[node name="ProgressBar" type="ProgressBar" parent="MilitaryServicePopulation"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MilitaryServicePopulation"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HSlider" type="HSlider" parent="MilitaryServicePopulation/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+rounded = true
+
+[node name="SpinBox" type="SpinBox" parent="MilitaryServicePopulation/HBoxContainer"]
+layout_mode = 2
+rounded = true
+
+[node name="RecruitButton" type="Button" parent="MilitaryServicePopulation/HBoxContainer"]
+layout_mode = 2
+text = "征集"
+
+[node name="DisbandButton" type="Button" parent="MilitaryServicePopulation/HBoxContainer"]
+layout_mode = 2
+text = "解散"

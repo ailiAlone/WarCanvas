@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci6vd0mkersjd"]
+
+[ext_resource type="Script" uid="uid://c0i3357rde0df" path="res://game_core/game_ui/menu_ui/battalion_menu/battalion_menu.gd" id="1_vbvap"]
+
+[node name="BattalionMenu" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -810.0
+offset_bottom = -462.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vbvap")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+text = "生产单位"
+horizontal_alignment = 1
+
+[node name="WeaponLable" type="Label" parent="."]
+layout_mode = 2
+text = "武器"
+
+[node name="Weapons" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 4
+
+[node name="ShieldLabel" type="Label" parent="."]
+layout_mode = 2
+text = "盾牌"
+
+[node name="Shields" type="GridContainer" parent="."]
+layout_mode = 2
+
+[node name="ArmorLabel" type="Label" parent="."]
+layout_mode = 2
+text = "护甲"
+
+[node name="Armors" type="GridContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "兵力"
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+rounded = true
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer"]
+layout_mode = 2
+rounded = true
+
+[node name="MaxLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "当前最大兵力："
+
+[node name="Generate" type="Button" parent="."]
+layout_mode = 2
+text = "确定"

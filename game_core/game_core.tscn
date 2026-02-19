@@ -1,0 +1,72 @@
+[gd_scene load_steps=13 format=3 uid="uid://cuvxgmr76tsvu"]
+
+[ext_resource type="Script" uid="uid://b6hd8t81ike6t" path="res://game_core/game_core.gd" id="1_d1sa6"]
+[ext_resource type="Script" uid="uid://b2yjn4avt14ub" path="res://game_core/game_ui/player_ui.gd" id="2_theuf"]
+[ext_resource type="PackedScene" uid="uid://dtnvar7lem1gf" path="res://shared/UI/grid_info/grid_info.tscn" id="3_d1sa6"]
+[ext_resource type="PackedScene" uid="uid://brkwaaxhoeqgb" path="res://game_core/game_ui/command_log/command_log.tscn" id="4_p61oj"]
+[ext_resource type="PackedScene" uid="uid://b8hq7j3k5m1v8" path="res://game_core/game_ui/menu_ui/menu_ui.tscn" id="5_d3w24"]
+[ext_resource type="PackedScene" uid="uid://b8k1j3p5y8n6a" path="res://game_core/game_ui/basic_info_ui/basic_info_ui.tscn" id="6_8lqb6"]
+[ext_resource type="PackedScene" uid="uid://cal6ds22ewtr4" path="res://game_core/game_ui/system_menu/system_menu.tscn" id="7_d1awa"]
+[ext_resource type="PackedScene" uid="uid://b2wxnb83ueyia" path="res://game_core/game_ui/option_bar/option_bar.tscn" id="8_lrwuu"]
+[ext_resource type="PackedScene" uid="uid://bqjsrb072gkd7" path="res://game_core/game_ui/help_page/help_menu.tscn" id="9_d1sa6"]
+[ext_resource type="Script" uid="uid://b1wgy5561givc" path="res://game_core/game_ui/help_page/help_menu.gd" id="10_theuf"]
+[ext_resource type="PackedScene" uid="uid://ctbgw6xmegmpi" path="res://shared/scripts/gpu_terrain/gpu_terrain.tscn" id="11_d1sa6"]
+[ext_resource type="Script" uid="uid://b4e0rr6m8538j" path="res://shared/scripts/cameracontroller.gd" id="11_r8yt6"]
+
+[node name="GameCore" type="Node3D"]
+script = ExtResource("1_d1sa6")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_theuf")
+
+[node name="StatuBar" parent="UI" instance=ExtResource("3_d1sa6")]
+layout_mode = 1
+offset_right = 305.0
+offset_bottom = -17.0
+
+[node name="CommandLog" parent="UI" instance=ExtResource("4_p61oj")]
+layout_mode = 1
+offset_left = 224.0
+offset_right = 516.0
+
+[node name="MenuUI" parent="UI" instance=ExtResource("5_d3w24")]
+layout_mode = 1
+
+[node name="BasicInfoUI" parent="UI" instance=ExtResource("6_8lqb6")]
+layout_mode = 1
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="SystemMenu" parent="UI" instance=ExtResource("7_d1awa")]
+visible = false
+layout_mode = 1
+offset_left = -54.0
+offset_top = -154.0
+offset_right = 54.0
+offset_bottom = 154.0
+
+[node name="OptionBar" parent="UI" instance=ExtResource("8_lrwuu")]
+layout_mode = 0
+offset_top = 180.235
+offset_right = 80.0
+offset_bottom = 219.235
+
+[node name="HelpMenu" parent="UI" instance=ExtResource("9_d1sa6")]
+visible = false
+layout_mode = 1
+script = ExtResource("10_theuf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.79653, 0.604599, 0, -0.604599, 0.79653, 0, 0, 0)
+sky_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("11_r8yt6")
+
+[node name="GPU_Terrain" parent="." instance=ExtResource("11_d1sa6")]

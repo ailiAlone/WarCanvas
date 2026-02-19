@@ -1,0 +1,52 @@
+ID,ModelPath,IconPath,MaxHealth,Required Materials,Capacity,Core_Value,Category
+TENT,res://shared/resources/buildings/building_models/population/tent/tent.fbx,-,20,5 WOOD,15,1,POPULATION
+CAMP_TENT,res://shared/resources/buildings/building_models/population/camp_tent/camp_tent.fbx,-,80,10 WOOD + 5 PLANK,80,2,POPULATION
+SMALL_HOUSE,res://shared/resources/buildings/building_models/population/small_house/small_house.glb,-,100,15 WOOD + 8 STONE_ORE,30,1.5,POPULATION
+MEDIUM_HOUSE,res://shared/resources/buildings/building_models/population/medium_house/medium_house.glb,-,100,20 WOOD + 8 STONE_BRICK + 8 PLANK,100,1.5,POPULATION
+LARGE_HOUSE,res://shared/resources/buildings/building_models/population/large_house/large_house.fbx,-,100,30 WOOD + 15 STONE_BRICK + 15 PLANK + 8 IRON_INGOT,300,1.5,POPULATION
+FISHER_HUT,res://shared/resources/buildings/building_models/resource/fisher_hut/fisher_hut.fbx,-,100,12 WOOD + 5 PLANK,30,1,RESOURCE
+LUMBER_CAMP,res://shared/resources/buildings/building_models/resource/lumber_camp/lumber_camp.fbx,-,100,15 WOOD,30,1,RESOURCE
+MINE,res://shared/resources/buildings/building_models/resource/mine/mine.fbx,-,100,20 WOOD + 5 STONE_ORE,30,1,RESOURCE
+FARM,res://shared/resources/buildings/building_models/resource/farm/farm.glb,-,100,15 WOOD + 10 STONE_ORE + 5 PLANK,30,1,RESOURCE
+PASTURE,res://shared/resources/buildings/building_models/resource/pasture/pasture.fbx,-,100,20 WOOD + 10 STONE_ORE + 8 PLANK,30,1,RESOURCE
+WOOD_WORKSHOP,res://shared/resources/buildings/building_models/processor/wood_workshop/wood_workshop.fbx,-,100,25 WOOD + 10 STONE_ORE,30,3,PROCESSOR
+STONE_WORKSHOP,res://shared/resources/buildings/building_models/processor/stone_workshop/stone_workshop.fbx,-,100,20 WOOD + 15 STONE_ORE + 5 PLANK,30,3,PROCESSOR
+SMELTERY,res://shared/resources/buildings/building_models/processor/smeltery/smeltery.fbx,-,100,30 WOOD + 20 STONE_BRICK + 15 PLANK + 10 IRON_INGOT,30,3,PROCESSOR
+WIND_MILL,res://shared/resources/buildings/building_models/processor/wind_mill/wind_mill.fbx,-,100,25 WOOD + 15 STONE_BRICK + 12 PLANK,30,3,PROCESSOR
+WATER_MILL,res://shared/resources/buildings/building_models/processor/water_mill/water_mill.fbx,-,100,30 WOOD + 20 STONE_BRICK + 15 PLANK,30,3,PROCESSOR
+ANIMAL_MILL,res://shared/resources/buildings/building_models/processor/animal_mill/animal_mill.fbx,-,100,25 WOOD + 15 STONE_BRICK + 12 PLANK,30,3,PROCESSOR
+SLAUGHTERHOUSE,res://shared/resources/buildings/building_models/processor/slaughterhouse/slaughterhouse.fbx,-,100,30 WOOD + 15 STONE_BRICK + 15 PLANK + 10 IRON_INGOT,30,3,PROCESSOR
+REFINERY,res://shared/resources/buildings/building_models/processor/refinery/refinery.fbx,-,100,35 WOOD + 20 STONE_BRICK + 20 PLANK + 15 IRON_INGOT + 8 GOLD_INGOT,30,3,PROCESSOR
+TAVERN,res://shared/resources/buildings/building_models/economic/tavern/tavern.fbx,-,100,30 WOOD + 15 STONE_BRICK + 15 PLANK + 10 IRON_INGOT,-,4,ECONOMIC
+MERCENARY_GUILD,res://shared/resources/buildings/building_models/economic/mercenary_guild/mercenary_guild.fbx,-,100,35 WOOD + 20 STONE_BRICK + 20 PLANK + 15 IRON_INGOT,-,5.5,ECONOMIC
+MARKETPLACE,res://shared/resources/buildings/building_models/economic/marketplace/marketplace.fbx,-,100,30 WOOD + 15 STONE_BRICK + 15 PLANK,-,4,ECONOMIC
+MARKET,res://shared/resources/buildings/building_models/economic/market/market.fbx,-,100,35 WOOD + 20 STONE_BRICK + 20 PLANK + 10 IRON_INGOT,-,6.2,ECONOMIC
+MERCHANTS_GUILD,res://shared/resources/buildings/building_models/economic/merchants_guild/merchants_guild.fbx,-,100,40 WOOD + 25 STONE_BRICK + 25 PLANK + 15 IRON_INGOT + 8 GOLD_INGOT,-,7,ECONOMIC
+TRADE_LEAGUE,res://shared/resources/buildings/building_models/economic/trade_league/trade_league.fbx,-,100,45 WOOD + 30 STONE_BRICK + 30 PLANK + 20 IRON_INGOT + 12 GOLD_INGOT,-,8.5,ECONOMIC
+SMALL_WAREHOUSE,res://shared/resources/buildings/building_models/core/small_warehouse/small_warehouse.glb,-,100,25 WOOD + 15 STONE_BRICK + 15 PLANK,-,6,CORE
+LARGE_WAREHOUSE,res://shared/resources/buildings/building_models/core/large_warehouse/large_warehouse.fbx,-,100,35 WOOD + 20 STONE_BRICK + 20 PLANK + 10 IRON_INGOT,-,6.1,CORE
+DOCK,res://shared/resources/buildings/building_models/core/dock/dock.fbx,-,100,30 WOOD + 15 STONE_BRICK + 15 PLANK + 10 IRON_INGOT,-,6.2,CORE
+HARBOR,res://shared/resources/buildings/building_models/core/harbor/harbor.fbx,-,100,45 WOOD + 25 STONE_BRICK + 25 PLANK + 20 IRON_INGOT + 12 GOLD_INGOT,-,8,CORE
+WORKERS_GUILD,res://shared/resources/buildings/building_models/core/workers_guild/workers_guild.fbx,-,100,35 WOOD + 20 STONE_BRICK + 20 PLANK + 15 IRON_INGOT,-,7,CORE
+FARMERS_GUILD,res://shared/resources/buildings/building_models/core/farmers_guild/farmers_guild.fbx,-,100,30 WOOD + 15 STONE_BRICK + 15 PLANK + 10 IRON_INGOT,-,7,CORE
+THIEVES_GUILD,res://shared/resources/buildings/building_models/core/thieves_guild/thieves_guild.fbx,-,100,40 WOOD + 20 STONE_BRICK + 20 PLANK + 15 IRON_INGOT + 8 GOLD_INGOT,-,9,CORE
+TOWN_HALL,res://shared/resources/buildings/building_models/core/town_hall/town_hall.glb,-,100,45 WOOD + 30 STONE_BRICK + 30 PLANK + 20 IRON_INGOT + 12 GOLD_INGOT,-,9,CORE
+PALACE,res://shared/resources/buildings/building_models/core/palace/palace.fbx,-,100,70 WOOD + 50 STONE_BRICK + 50 PLANK + 40 IRON_INGOT + 25 GOLD_INGOT + 15 LUXURY,-,10,CORE
+HOSPITAL,res://shared/resources/buildings/building_models/advanced/hospital/hospital.fbx,-,100,35 WOOD + 20 STONE_BRICK + 20 PLANK + 15 IRON_INGOT,-,4.5,ADVANCED
+COURTHOUSE,res://shared/resources/buildings/building_models/advanced/courthouse/courthouse.fbx,-,100,40 WOOD + 25 STONE_BRICK + 25 PLANK + 20 IRON_INGOT + 10 GOLD_INGOT,-,4.5,ADVANCED
+BASIC_COLLEGE,res://shared/resources/buildings/building_models/advanced/basic_college/basic_college.fbx,-,100,35 WOOD + 20 STONE_BRICK + 20 PLANK + 15 IRON_INGOT,-,5.5,ADVANCED
+COMMERCE_COLLEGE,-,-,100,40 WOOD + 25 STONE_BRICK + 25 PLANK + 20 IRON_INGOT + 10 GOLD_INGOT,-,5.6,ADVANCED
+MILITARY_ACADEMY,-,-,100,45 WOOD + 30 STONE_BRICK + 30 PLANK + 25 IRON_INGOT + 15 GOLD_INGOT,-,5.6,ADVANCED
+BARRACKS,res://shared/resources/buildings/building_models/military/barracks/barracks.fbx,-,100,40 WOOD + 25 STONE_BRICK + 25 PLANK + 20 IRON_INGOT,500,5,MILITARY
+FORTRESS,res://shared/resources/buildings/building_models/military/fortress/fortress.fbx,-,100,60 WOOD + 40 STONE_BRICK + 40 PLANK + 35 IRON_INGOT + 15 GOLD_INGOT,-,6.5,MILITARY
+CASTLE,res://shared/resources/buildings/building_models/military/castle/castle.glb,-,100,80 WOOD + 60 STONE_BRICK + 60 PLANK + 50 IRON_INGOT + 30 GOLD_INGOT + 15 LUXURY,-,8,MILITARY
+TRAINING_GROUND,res://shared/resources/buildings/building_models/military/training_ground/training_ground.fbx,-,100,35 WOOD + 20 STONE_BRICK + 20 PLANK + 15 IRON_INGOT,-,4.5,MILITARY
+MILITARY_FACTORY,res://shared/resources/buildings/building_models/military/military_factory/military_factory.fbx,-,100,45 WOOD + 30 STONE_BRICK + 30 PLANK + 25 IRON_INGOT + 10 GOLD_INGOT,-,4.5,MILITARY
+STABLE,res://shared/resources/buildings/building_models/military/stable/stable.fbx,-,100,40 WOOD + 25 STONE_BRICK + 25 PLANK + 20 IRON_INGOT + 10 GOLD_INGOT,-,4.5,MILITARY
+SIEGE_WORKSHOP,res://shared/resources/buildings/building_models/military/siege_workshop/siege_workshop.fbx,-,100,50 WOOD + 35 STONE_BRICK + 35 PLANK + 30 IRON_INGOT + 15 GOLD_INGOT,-,3,MILITARY
+WOODEN_WALL,res://shared/resources/buildings/building_models/defense/wooden_wall/wooden_wall.fbx,-,300,"8 WOOD ",-,1,DEFENSE
+STONE_WALL,res://shared/resources/buildings/building_models/defense/stone_wall/stone_wall.fbx,-,500,"12 STONE_BRICK ",-,1,DEFENSE
+WOODEN_GATE,res://shared/resources/buildings/building_models/defense/wooden_gate/wooden_gate.fbx,-,300,15 WOOD + 8 PLANK,-,1,DEFENSE
+CITY_GATE,res://shared/resources/buildings/building_models/defense/city_gate/city_gate.fbx,-,500,25 STONE_BRICK + 15 IRON_INGOT,-,1,DEFENSE
+WOODEN_TOWER,res://shared/resources/buildings/building_models/defense/wooden_tower/wooden_tower.fbx,-,300,20 WOOD + 15 STONE_ORE + 10 PLANK,-,1,DEFENSE
+STONE_TOWER,res://shared/resources/buildings/building_models/defense/stone_tower/stone_tower.fbx,-,500,30 STONE_BRICK + 20 IRON_INGOT,-,1,DEFENSE

@@ -1,0 +1,51 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+    
+        {
+            "name": "GDScript: Launch Project",
+            "type": "godot",
+            "request": "launch",
+            "project": "${workspaceFolder}",
+            "debug_collisions": false,
+            "debug_paths": false,
+            "debug_navigation": false,
+            "additional_options": "",
+            "editor_path": "${config:godotTools.editorPath.godot4}"
+        },
+        {
+            "name": "GPU example",
+            "type": "godot",
+            "request": "launch",
+            "project": "${workspaceFolder}",
+            "debug_collisions": false,
+            "debug_paths": false,
+            "debug_navigation": false,
+            "additional_options": "--script gpu_example/GPU_computing_example.gd"
+        },
+        {
+            "name": "GPU高度生成器测试",
+            "type": "godot",
+            "request": "launch",
+            "project": "${workspaceFolder}",
+            "debug_collisions": false,
+            "debug_paths": false,
+            "debug_navigation": false,
+            "additional_options": "--script shared/scripts/map_generator/test_gpu_height.gd"
+        },
+        {
+            "name": "GPU噪声生成器测试",
+            "type": "godot",
+            "request": "launch",
+            "project": "${workspaceFolder}",
+            "debug_collisions": false,
+            "debug_paths": false,
+            "debug_navigation": false,
+            "additional_options": "--script game_content/tests/gpu_test.gd"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxl3khvq57wj7"]
+
+[ext_resource type="Script" uid="uid://dg58v8chpjkfa" path="res://game_core/game_ui/common/building_badge/building_badge.gd" id="1_lwh02"]
+[ext_resource type="PackedScene" uid="uid://brcvkuo2ra01g" path="res://game_core/game_ui/common/building_badge/building_badge_ui.tscn" id="2_dp1mn"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1"]
+viewport_path = NodePath("SubViewport")
+
+[node name="BuildingBadge" type="Node3D"]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0, 0)
+script = ExtResource("1_lwh02")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="BuildingBadgeUI" parent="SubViewport" instance=ExtResource("2_dp1mn")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_1")

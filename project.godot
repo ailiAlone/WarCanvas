@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="WarCanvas"
+run/main_scene="res://game_content/main_menu/main_menu.tscn"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="uid://3mpkr8cc2shr"
+config/windows_native_icon="res://icon.ico"
+
+[autoload]
+
+Config="*res://shared/scripts/config.gd"
+InputManager="*res://shared/scripts/input_manager.gd"
+EventBus="*res://shared/scripts/events/event_bus.gd"
+CommandBus="*res://shared/scripts/commands/command_bus.gd"
+HeadquarterManager="*res://game_core/headquarter/headquarter_manager.gd"
+Locale="*res://shared/translation/locale.gd"
+AIStrategy="*res://game_core/ai_strategy/ai_strategy.gd"
+GameState="*res://shared/scripts/gamestate/gamestate.gd"
+
+[filesystem]
+
+import/blender/enabled=false
+
+[rendering]
+
+mesh_lod/lod_change/threshold_pixels=10.0

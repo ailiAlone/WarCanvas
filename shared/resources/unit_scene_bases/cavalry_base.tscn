@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4gq4o81t518c"]
+
+[ext_resource type="PackedScene" uid="uid://ct4veno0xhiw6" path="res://shared/resources/bodies/cloth_cavalry/cloth_cavalry.tscn" id="1_22u5y"]
+
+[node name="CavalryBase" type="Node3D"]
+
+[node name="BodyAttach" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08852, 0)
+
+[node name="cloth_cavalry" parent="BodyAttach" instance=ExtResource("1_22u5y")]
+
+[node name="WeaponAttach" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0571122, 1.26265, 0.286532)
+
+[node name="ShieldAttach" type="Node3D" parent="."]
+transform = Transform3D(-0.519615, 0, 0.3, 0, 0.6, 0, -0.3, 0, -0.519615, 0.178536, 1.46602, -0.26356)

@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1662g6opkg8o"]
+
+[ext_resource type="Script" uid="uid://bdomkbpdsty4v" path="res://game_core/game_ui/menu_ui/expedition_menu/expedition_menu.gd" id="1_f3ail"]
+
+[node name="ExpeditionMenu" type="VBoxContainer"]
+offset_right = 312.0
+offset_bottom = 78.0
+script = ExtResource("1_f3ail")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 4
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "    人口    "
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+rounded = true
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+rounded = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "军事人口"
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+rounded = true
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+rounded = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "    资金    "
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+rounded = true
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+rounded = true
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "创建"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "注意：当前的配置中，创建远征队后，
+玩家将会控制该远征队，原定居点将会托管"

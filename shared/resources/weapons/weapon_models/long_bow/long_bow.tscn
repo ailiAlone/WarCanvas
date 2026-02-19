@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs107hclj03bj"]
+
+[ext_resource type="PackedScene" uid="uid://b8hg4wxwqvq60" path="res://shared/resources/weapons/weapon_models/long_bow/long_bow.fbx" id="1_id0xc"]
+
+[node name="long_bow" instance=ExtResource("1_id0xc")]
+
+[node name="Bow" parent="." index="0"]
+transform = Transform3D(-3.0598e-06, -5.28485e-06, 70, 3.0598e-06, 70, 5.28485e-06, -70, 3.0598e-06, -3.0598e-06, 0, 0, 0)

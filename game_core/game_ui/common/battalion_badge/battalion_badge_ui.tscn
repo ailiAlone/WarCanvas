@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://brcvkuo2ra020"]
+
+[ext_resource type="StyleBox" uid="uid://dd7kmqx4td8bo" path="res://game_core/game_ui/style/simple_white.stylebox" id="1_p1j5v"]
+[ext_resource type="Script" uid="uid://c67607nyvcl5m" path="res://game_core/game_ui/common/battalion_badge/battalion_badge_ui.gd" id="2_652yw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p1j5v"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_w8ajc"]
+font_size = 32
+
+[node name="BattalionBadgeUI" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -29.0
+offset_right = 78.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_p1j5v")
+script = ExtResource("2_652yw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "营队名称"
+label_settings = SubResource("LabelSettings_p1j5v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalStrength" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "兵力："
+label_settings = SubResource("LabelSettings_w8ajc")

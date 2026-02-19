@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://brcvkuo2ra01g"]
+
+[ext_resource type="Script" uid="uid://c4iranma3c8xb" path="res://game_core/game_ui/style/CapsuleStyleBox.gd" id="1_5hpdh"]
+[ext_resource type="Script" uid="uid://b3x7e62jbl0n" path="res://game_core/game_ui/common/building_badge/building_badge_ui.gd" id="2_652yw"]
+
+[sub_resource type="StyleBox" id="StyleBox_5hpdh"]
+resource_local_to_scene = false
+resource_name = ""
+content_margin_left = -1.0
+content_margin_top = -1.0
+content_margin_right = -1.0
+content_margin_bottom = -1.0
+script = ExtResource("1_5hpdh")
+fill_color = Color(1, 1, 1, 0.5)
+border_color = Color(0.6, 0.6, 0.9, 0.7)
+border_width = 2.0
+vertical_capsule = false
+smoothness = 16
+metadata/_custom_type_script = "uid://c4iranma3c8xb"
+
+[sub_resource type="LabelSettings" id="LabelSettings_qubuw"]
+font_size = 36
+
+[node name="BuildingBadgeUI" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -29.0
+offset_right = 78.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBox_5hpdh")
+script = ExtResource("2_652yw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "建筑名称"
+label_settings = SubResource("LabelSettings_qubuw")
+horizontal_alignment = 1
+vertical_alignment = 1

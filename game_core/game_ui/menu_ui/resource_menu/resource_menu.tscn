@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm3dqnnqcpxpu"]
+
+[ext_resource type="Script" uid="uid://bajhojcp1cfvr" path="res://game_core/game_ui/menu_ui/resource_menu/resource_menu.gd" id="1_resource"]
+
+[node name="ResourceMenu" type="VBoxContainer"]
+offset_right = 160.0
+offset_bottom = 166.0
+script = ExtResource("1_resource")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+text = "资源菜单"
+horizontal_alignment = 1
+
+[node name="BasicResources" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BasicResources"]
+layout_mode = 2
+text = "基础资源"
+horizontal_alignment = 1
+
+[node name="ResourceGrid" type="GridContainer" parent="BasicResources"]
+layout_mode = 2
+columns = 4
+
+[node name="FoodLabel" type="Label" parent="BasicResources/ResourceGrid"]
+layout_mode = 2
+text = "食物："
+
+[node name="FoodValue" type="Label" parent="BasicResources/ResourceGrid"]
+layout_mode = 2
+text = "0"
+
+[node name="MoneyLabel" type="Label" parent="BasicResources/ResourceGrid"]
+layout_mode = 2
+text = "金钱："
+
+[node name="MoneyValue" type="Label" parent="BasicResources/ResourceGrid"]
+layout_mode = 2
+text = "0"
+
+[node name="TotalValueLabel" type="Label" parent="BasicResources/ResourceGrid"]
+layout_mode = 2
+text = "总价值："
+
+[node name="TotalValueValue" type="Label" parent="BasicResources/ResourceGrid"]
+layout_mode = 2
+text = "0"
+
+[node name="WeightLabel" type="Label" parent="BasicResources/ResourceGrid"]
+layout_mode = 2
+text = "总重量："
+
+[node name="WeightValue" type="Label" parent="BasicResources/ResourceGrid"]
+layout_mode = 2
+text = "0"
+
+[node name="OriginalItems_title" type="Label" parent="."]
+layout_mode = 2
+text = "原始物品"
+horizontal_alignment = 1
+
+[node name="OriginalItems" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 7
+
+[node name="ProcessedItems_title" type="Label" parent="."]
+layout_mode = 2
+text = "加工物品"
+horizontal_alignment = 1
+
+[node name="ProcessedItems" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 7

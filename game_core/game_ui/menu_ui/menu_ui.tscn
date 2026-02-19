@@ -1,0 +1,145 @@
+[gd_scene load_steps=14 format=3 uid="uid://b8hq7j3k5m1v8"]
+
+[ext_resource type="Script" uid="uid://bquu3hsiu36b8" path="res://game_core/game_ui/menu_ui/menu_ui.gd" id="1_headquarter_ui"]
+[ext_resource type="PackedScene" uid="uid://dh4ju171cplat" path="res://game_core/game_ui/menu_ui/building_menu/builiding_menu.tscn" id="2_building_menu"]
+[ext_resource type="StyleBox" uid="uid://bbv0jy4hphxo8" path="res://game_core/game_ui/style/simple_black.stylebox" id="2_fwsbu"]
+[ext_resource type="Texture2D" uid="uid://cii8vm007q60" path="res://shared/resources/ui/icon/turn_button/shield.svg" id="3_8jn6h"]
+[ext_resource type="PackedScene" uid="uid://ci6vd0mkersjd" path="res://game_core/game_ui/menu_ui/battalion_menu/battalion_menu.tscn" id="3_mjpah"]
+[ext_resource type="Texture2D" uid="uid://cnh3tpa4u0nei" path="res://shared/resources/ui/icon/turn_button/sword.svg" id="3_xtua1"]
+[ext_resource type="PackedScene" uid="uid://k1ftjim0vv4b" path="res://game_core/game_ui/menu_ui/governance_menu/governance_menu.tscn" id="4_50bv2"]
+[ext_resource type="PackedScene" uid="uid://dm3dqnnqcpxpu" path="res://game_core/game_ui/menu_ui/resource_menu/resource_menu.tscn" id="4_resource_menu"]
+[ext_resource type="Texture2D" uid="uid://3psxsk2mb8jb" path="res://shared/resources/ui/icon/menu_toggle_button/close.svg" id="5_ccbed"]
+[ext_resource type="PackedScene" uid="uid://b8xn0d3yq6h5a" path="res://game_core/game_ui/menu_ui/trading_menu/trading_menu.tscn" id="5_trading_menu"]
+[ext_resource type="Texture2D" uid="uid://bh4tg7k8rfr1e" path="res://shared/resources/ui/icon/menu_toggle_button/open.svg" id="6_mw06p"]
+[ext_resource type="PackedScene" uid="uid://8iqylir1rra6" path="res://game_core/game_ui/menu_ui/assignment_menu/assignment_menu.tscn" id="7_ae32j"]
+[ext_resource type="PackedScene" uid="uid://d1662g6opkg8o" path="res://game_core/game_ui/menu_ui/expedition_menu/expedition_menu.tscn" id="13_mw06p"]
+
+[node name="MenuUI" type="PanelContainer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_fwsbu")
+script = ExtResource("1_headquarter_ui")
+icon_player_turn = ExtResource("3_xtua1")
+icon_enemy_turn = ExtResource("3_8jn6h")
+icon_close_menu = ExtResource("5_ccbed")
+icon_open_menu = ExtResource("6_mw06p")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="MenuItems" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="GovernanceButton" type="Button" parent="HBoxContainer/MarginContainer/MenuItems"]
+layout_mode = 2
+text = "军政"
+
+[node name="BattalionButton" type="Button" parent="HBoxContainer/MarginContainer/MenuItems"]
+layout_mode = 2
+text = "集结部队"
+
+[node name="ResourceButton" type="Button" parent="HBoxContainer/MarginContainer/MenuItems"]
+layout_mode = 2
+text = "资源"
+
+[node name="AssignmentButton" type="Button" parent="HBoxContainer/MarginContainer/MenuItems"]
+layout_mode = 2
+text = "生产调配"
+
+[node name="BasicResource" type="Label" parent="HBoxContainer/MarginContainer/MenuItems"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "资金：0
+食物：0"
+
+[node name="ToggleButton" type="Button" parent="HBoxContainer/MarginContainer/MenuItems"]
+layout_mode = 2
+icon = ExtResource("6_mw06p")
+icon_alignment = 1
+
+[node name="BuildButton" type="Button" parent="HBoxContainer/MarginContainer/MenuItems"]
+layout_mode = 2
+text = "建造"
+
+[node name="TradingButton" type="Button" parent="HBoxContainer/MarginContainer/MenuItems"]
+layout_mode = 2
+text = "交易"
+
+[node name="ExpeditionButton" type="Button" parent="HBoxContainer/MarginContainer/MenuItems"]
+layout_mode = 2
+text = "远征队"
+
+[node name="DebugList" type="VBoxContainer" parent="HBoxContainer/MarginContainer/MenuItems"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/MenuItems/DebugList"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "debug"
+
+[node name="EndTurn" type="Button" parent="HBoxContainer/MarginContainer/MenuItems"]
+modulate = Color(0.5, 0.1, 0.1, 1)
+layout_mode = 2
+size_flags_vertical = 10
+text = "结束
+回合"
+icon = ExtResource("3_8jn6h")
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 0
+horizontal_scroll_mode = 0
+
+[node name="ContentArea" type="MarginContainer" parent="HBoxContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GovernanceMenu" parent="HBoxContainer/ScrollContainer/ContentArea" instance=ExtResource("4_50bv2")]
+visible = false
+layout_mode = 2
+
+[node name="BuildingMenu" parent="HBoxContainer/ScrollContainer/ContentArea" instance=ExtResource("2_building_menu")]
+visible = false
+layout_mode = 2
+
+[node name="BattalionMenu" parent="HBoxContainer/ScrollContainer/ContentArea" instance=ExtResource("3_mjpah")]
+visible = false
+layout_mode = 2
+
+[node name="ResourceMenu" parent="HBoxContainer/ScrollContainer/ContentArea" instance=ExtResource("4_resource_menu")]
+visible = false
+layout_mode = 2
+
+[node name="TradingMenu" parent="HBoxContainer/ScrollContainer/ContentArea" instance=ExtResource("5_trading_menu")]
+visible = false
+layout_mode = 2
+
+[node name="AssignmentMenu" parent="HBoxContainer/ScrollContainer/ContentArea" instance=ExtResource("7_ae32j")]
+visible = false
+layout_mode = 2
+
+[node name="ExpeditionMenu" parent="HBoxContainer/ScrollContainer/ContentArea" instance=ExtResource("13_mw06p")]
+visible = false
+layout_mode = 2

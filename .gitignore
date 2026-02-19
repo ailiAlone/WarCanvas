@@ -1,0 +1,15 @@
+# Godot 特定
+.godot/
+*.import
+*.translation
+export_presets.cfg
+
+# Git 文件
+.git/
+
+# 导出文件（关键！）
+output/
+*.pck
+*.exe
+*.apk
+*.zip

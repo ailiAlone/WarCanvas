@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtnvar7lem1gf"]
+
+[ext_resource type="Script" uid="uid://cvqth54tac6ry" path="res://shared/UI/grid_info/grid_info.gd" id="1_0ebbf"]
+
+[node name="StatuBar" type="HBoxContainer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+script = ExtResource("1_0ebbf")
+
+[node name="PositionGrid" type="Label" parent="."]
+layout_mode = 2
+text = "网格坐标(x,y)"
+
+[node name="GridGeology" type="Label" parent="."]
+layout_mode = 2
+text = "地形:"
+
+[node name="GridHeight" type="Label" parent="."]
+layout_mode = 2
+text = "地形高度："
+
+[node name="TreeDensity" type="Label" parent="."]
+layout_mode = 2
+text = "树木密度："

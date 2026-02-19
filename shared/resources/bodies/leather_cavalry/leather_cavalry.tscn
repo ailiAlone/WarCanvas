@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://blw4gxwu0r2ad"]
+
+[ext_resource type="PackedScene" uid="uid://btymt8bynjb3g" path="res://shared/resources/bodies/leather_cavalry/leather_cavalry.fbx" id="1_5bj3a"]
+
+[node name="leather_cavalry" instance=ExtResource("1_5bj3a")]
