@@ -12,6 +12,9 @@ func _init():
 # 从CSV文件加载翻译数据
 func load_translations() -> void:
 	var file_path = "res://shared/translation/translation.csv"
+	if not FileAccess.file_exists(file_path):
+		push_error("翻译文件不存在: " + file_path)
+		return
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	
 	if file == null:
